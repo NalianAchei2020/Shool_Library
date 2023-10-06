@@ -2,7 +2,6 @@ class Person
   # getter and setter in one
   attr_accessor :name, :age
 
-
   # getter
   attr_reader :id
 
@@ -22,7 +21,6 @@ class Person
     @parent_permission || of_age?
   end
 end
-
 
 person1 = Person.new(26, 'Nalian')
 person1.parent_permission

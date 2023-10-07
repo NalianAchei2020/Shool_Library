@@ -138,29 +138,23 @@ class App
   end
 
   def run_app(option_id)
-    case option_id
-    when '1'
-      list_books
-    when '2'
-      list_people
-    when '3'
-      create_person
-    when '4'
-      create_book
-    when '5'
-      create_rental
-    when '6'
-      rental_list
-    when '7'
-      exit_app
+    options = {
+      '1' => :list_books,
+      '2' => :list_people,
+      '3' => :create_person,
+      '4' => :create_book,
+      '5' => :create_rental,
+      '6' => :rental_list,
+      '7' => :exit_app
+    }
+
+    selected_option = options[option_id]
+    if selected_option
+      send(selected_option)
     else
       puts 'Choose an existing option!..'
     end
-    display_options
-  end
 
-  def initial
-    puts 'Welcome to School Library App!'
     display_options
   end
 end
